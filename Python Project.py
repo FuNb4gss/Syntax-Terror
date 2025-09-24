@@ -4,6 +4,7 @@ import random
 
 # The start of my auction project! :)
 # first i will recieve and store information about the customer and what they are selling!
+# Crash test
 
 name = input("Hello! Welcome to the auction! What is your name?: ")
 time.sleep(1)
