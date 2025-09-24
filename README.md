@@ -1,1 +1,1 @@
-# Python-Project
+This is an auction project to see ig user wants to auction/bid on items
