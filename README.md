@@ -1,1 +1,1 @@
-This is an auction project to see ig user wants to auction/bid on items
+This is an auction project to see if the user wants to auction/bid on items
