@@ -1,1 +1,1 @@
-This is an auction project to see if the user wants to auction/bid on items!
+This is a collection of some of my early coding projects and just random adventures
