@@ -1,0 +1,31 @@
+#1
+Fruits = ("Strawberry", "Apple", "Banana", "Kiwi")
+print(Fruits[1])
+#2
+print(Fruits[2:4])
+#3
+list_colors = ["Red", "Orange", "Yellow", "Green"]
+tuple_colors = tuple(list_colors)
+print(tuple_colors)
+Farfanuggen = ("Shlamawamadingdong",)
+print(type(Farfanuggen))
+#4
+#Farfanuggen[0] = 8008135
+#we get a type error because tuples are immutable
+#5
+warkwark = ("never", "gonna", "give", "you", "up", ["never", "gonna", "let", "you", "down"],)
+print(warkwark)
+rickrolled = warkwark[5]
+rickrolled.append("neven gonna run around and desert you")
+print(warkwark)
+#5 bonus
+#you can change the tuple by setting the variable to a new tuple but you cant append the tuple
+warkwark.append("down")
+warkwark = ("I believe in a thing called love")
+print(warkwark)
+#6
+tuple_with_list = (1, [2, 3], 4)
+list_with_tuple = [("a", "b"), ("c", "d")]
+tuple_with_lisp = tuple_with_list[1]
+tuple_with_lisp.append(8008135)
+print(tuple_with_list)
