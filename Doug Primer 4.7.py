@@ -14,8 +14,8 @@ import sys
 
 try:
     sys.exit("DONT YOU RUN FROM THE LORD!")
-except SystemExit as e:
-    print(e)
+except SystemExit as travel:
+    print(travel)
 #5
 try:
     while True:
@@ -97,7 +97,7 @@ def Expedition():
     elif 18 <= age <= 50:
         print(f"Congrats, You are {age} years old and eligible to go on the Expedition!")
         webbrowser.open("https://www.youtube.com/watch?v=tKjZuykKY1I&list=RDtKjZuykKY1I&start_radio=1")
-    elif 50 < age < 100:
+    elif 50 < age <= 100:
         print("Well holy crap, do you have your AARP card yet?")
     else:
         print("Ok, not all of use can be cryogenically frozen and still look amazing...")
