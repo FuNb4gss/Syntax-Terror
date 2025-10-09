@@ -90,12 +90,12 @@ def Expedition():
     try:
         age = int(input("How old are you?: "))
     except ValueError:
-        raise ValueError("Im gonna need a numberical number here champ")
+        print("Im gonna need a numberical number here champ")
     
     if age < 0:
         raise ValueError("You havent been born yet. Are... are you even real?")
     elif 18 <= age <= 50:
-        print("You are old enough to go on the Expedition!")
+        print(f"Congrats, You are {age} years old and eligible to go on the Expedition!")
         webbrowser.open("https://www.youtube.com/watch?v=tKjZuykKY1I&list=RDtKjZuykKY1I&start_radio=1")
     elif 50 < age < 100:
         print("Well holy crap, do you have your AARP card yet?")
