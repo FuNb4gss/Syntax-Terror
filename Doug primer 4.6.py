@@ -60,3 +60,37 @@ for value in fav_book.values():
     print(value)
 
 #4
+if "Author" in fav_book:
+    print("Author exists!")
+    
+#5
+print(list(fav_book.values()))
+print(list(fav_book.items()))
+
+#Challenge
+
+students = {
+    "student1": {"name": "Alice", "age": 20, "grades": [90, 85, 92]},
+    "student2": {"name": "Bob", "age": 22, "grades": [78, 81, 86]},
+    "student3": {"name": "Charlie", "age": 19, "grades": [95, 89, 94]},
+}
+
+for student_id, info in students.items():
+    print(info["name"])
+    
+for student_id, info in students.items():
+    print(f"{info['name']}'s grades: {info['grades']}")
+    
+for student_id, info in students.items():
+    grades = info["grades"]
+    average = sum(grades) / len(grades)
+    print(f"{info['name']}'s average grade is {average}")
+    
+#Bonus
+
+school = {
+    "Class A": {"teacher": "Ms. Smith", "students": 25},
+    "Class B": {"teacher": "Mr. Lee", "students": 20}
+}
+
+print(school["Class A"]["teacher"])
