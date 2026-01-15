@@ -1,75 +1,72 @@
 import random
-import sys
-import datetime
 import time
 
+user_hp = 100
+advocate_hp = 100
 
-
-
+# damage rolls
 
 def two_handed_sword():
-    attack = random.randint(15,30)
-    return attack
+    return random.randint(15,30)
 
 def fireball():
-    attack = random.randint(10,40)
-    return attack
+    return random.randint(10,40)
 
+def advocate_attack():
+    return random.randint(5,20)
 
-fire_magic = fireball()
-phys_attack = two_handed_sword()
+# Crit system
 
-def fireball_crit():
-    crit = fire_magic * 0.10
-    finish = crit + fire_magic
-    return finish
+def roll_crit(damage, chance, multiplayer=1.5):
+    if random.random() < chance:
+        return int(damage * multiplayer), True
+    return damage, False
 
-def two_handed_crit():
-    crit = phys_attack * 0.15
-    finish = crit + phys_attack
-    return finish
+# Player attack
 
-def advocate_health():
-    health = 100
-    return health
+def battlemage_attack():
+    phys = two_handed_sword()
+    fire = fireball()
 
-def player_health():
-    health = 100
-    return health
+    phys, phys_crit = roll_crit(phys, 0.15)
+    fire, fire_crit = roll_crit(fire, 0.10)
 
-def advocate_magic_sword():
-    attack = random.randint(5,20)
-    return attack
+    total = phys + fire
 
-def damage():
-    
+    print(f"You strike for {phys} physical damage", end="")
+    if phys_crit:
+        print(" (CRITICAL!)", end="")
+    print()
 
+    print(f"You unleash {fire} fire damage", end="")
+    if fire_crit:
+        print(" (CRITICAL!)", end="")
+    print()
 
+    print(f"➡ Total damage dealt: {total}\n")
 
+    return total
 
-advocate_attack = advocate_magic_sword()
-advocate_hp = advocate_health()
-user = player_health()
+def intro():
+    story = [
+        "Welcome, traveler, to the world of Valaria.",
+        "Once, we lived in harmony. No war. No magic. Only peace.",
+        "Then the Advocates descended from the heavens.",
+        "They burned our towns. We were forced to fight back.",
+        "From the earth, we learned magic — and with steel and flame, we endured."
+    ]
 
-print(f"{fire_magic}")
-print(fireball_crit())
+    for line in story:
+        print(line)
+        time.sleep(2)
 
-print(f"{phys_attack}")
-print(two_handed_crit())
+intro()
 
-print("Welcome user, To the world of Valaria")
-time.sleep(2)
-print("In Valaria, we used to live in Harmony. There was no War. There was no magic. There was only peace")
-time.sleep(2)
-print("But then they...the Advocate's arrived from the heavens. They pillaged and burned our towns. We had no choice to fight back.")
-time.sleep(2)
-print("With that constant fighting we developed magic from the Earth. It was like she was helping us fight back.")
-time.sleep(2)
-print("Armed with our two-handed weaponry and our newly aquired knowledge of magic, We fought. We fought and drove back the Advocates. They still outnumber us 3 to 1 but, we continue to dwindle their numbers.")
-time.sleep(2)
-
-print("You user, are the Battlemage of Astoria. You see 2 Advocate's charge at you ready to battle. Get yourself ready!")
+print("\nYou are the BattleMage of Astoria")
+print("Two Advocates charge at you!\n")
 time.sleep(2)
 
+damage = battlemage_attack()
+advocate_hp -= damage
 
-
+print(f"Advocate has {advocate_hp} Hp remaining.")
